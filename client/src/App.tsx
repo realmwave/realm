@@ -1,14 +1,18 @@
 import { useState } from 'react';
+import { BrowserRouter } from "react-router-dom";
 
-import { Home } from './pages';
+import Navigation from "./navigations/Navigation";
+
 import './App.scss';
 
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navigation />
+      </div>
+    </BrowserRouter>
   )
 };
 
