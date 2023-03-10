@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Sidebar } from "../containers";
-import { Home, Browse, ComingSoon } from "../pages";
+import { Home, Browse, ComingSoon, ErrorPage } from "../pages";
 
 
 export default function Navigation() {
@@ -10,7 +10,7 @@ export default function Navigation() {
       <Sidebar />
       <div className="w-full h-full pt-8 pl-[15%]" >
         <div className="w-full h-full px-20" >
-          <Routes>
+          <Routes >
             <Route path="/" element={<Home />} />
             <Route path="/browse" element={<Browse />} />
             <Route path="/watchlist" element={<Browse />} />
@@ -19,6 +19,7 @@ export default function Navigation() {
             <Route path="/parties" element={<Browse />} />
             <Route path="/settings" element={<Browse />} />
             <Route path="/logout" element={<Browse />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
       </div>
