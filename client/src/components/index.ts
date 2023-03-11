@@ -1,6 +1,7 @@
 import { Header, Carousel } from "./Home";
 import VideoCard from "./VideoCard";
 import Toast from "./Toast";
+import Loading from "./Loading";
 
 
 export {
@@ -8,5 +9,6 @@ export {
   Carousel,
   VideoCard,
   Toast,
+  Loading,
 };
 

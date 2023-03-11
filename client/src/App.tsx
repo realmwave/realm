@@ -17,6 +17,7 @@ import './App.scss';
 function App() {
   const [currentUser, setCurrentUser] = useState<null | object | undefined>(null)
 
+
   //useEffect(() => {
   //  onAuthStateChanged(auth, (user) => {
   //    if (user) {

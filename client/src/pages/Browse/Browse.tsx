@@ -1,9 +1,11 @@
 import { useState } from "react";
+
+import auth from "../../firebase/firebase";
 import "./browse.scss";
 
 
 export default function Browse() {
-  const [email, setEmail] = useState<string>("")
+  const [email, setEmail] = useState<string>(auth.currentUser?.email || "")
   
   return (
     <section className="w-full h-full" >

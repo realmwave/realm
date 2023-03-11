@@ -19,8 +19,10 @@ const SERVICEACCOUNT_CONFIG = {
   "token_uri": process.env.FIREBASE_TOKEN_URI as string,
   "auth_provider_x509_cert_url": process.env.FIREBASE_AUTHPROVIDER_CERT_URL as string,
   "client_x509_cert_url": process.env.FIREBASE_CLIENT_CERT_URL as string,
-}
+};
+
 
 admin.initializeApp({
-  credential: admin.credential.cert(JSON.parse(SERVICEACCOUNT_CONFIG))
+  credential: admin.credential.cert(JSON.stringify(SERVICEACCOUNT_CONFIG))
 });
+

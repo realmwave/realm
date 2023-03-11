@@ -30,7 +30,9 @@ export interface ISeasons extends Document {
 };
 
 export interface IMedia extends Document {
+  title: string;
   thumbnails: Types.Array<string>;
+  banner: Types.Array<string>;
   mediaType: "movie" | "series";
   genre: Types.Array<string>;
   productionHouse: IProductionHouse["_id"];
@@ -139,7 +141,17 @@ const SeasonSchema: Schema = new mongoose.Schema<ISeasons>({
 });
 
 const MediaSchema: Schema = new mongoose.Schema<IMedia>({
+  title: {
+    type: String,
+    minlength: 1,
+    maxlength: 512,
+    required: true,
+  },
   thumbnails: {
+    type: [String],
+    required: true,
+  },
+  banner: {
     type: [String],
     required: true,
   },

@@ -9,7 +9,6 @@ import { HiOutlineBell } from "react-icons/hi";
 
 import auth from "../../firebase/firebase";
 import defaultUser from "../../../public/images/user.png";
-import personImg from "../../../public/images/person.jpg";
 import "./styles.scss";
 
 
@@ -87,7 +86,7 @@ export default function Header() {
           </div>
           <div className="ml-2" >
             <h3 className="app__text-tertiary text-[0.75rem] text-start" >{auth.currentUser ? auth.currentUser.displayName : "Welcome"}</h3>
-            <h3 className="app__text-tertiary text-[0.65rem] text-start" >{auth.currentUser ? "@" + auth.currentUser.displayName : "@user"}</h3>
+            <h3 className="app__text-tertiary text-[0.65rem] text-start" >{auth.currentUser ? "@" + auth.currentUser.displayName?.split(" ")[0].toLowerCase() : "@user"}</h3>
           </div>
         </button>
       </div>

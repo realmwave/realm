@@ -2,6 +2,7 @@ import mongoose, { Schema, Document, Types } from "mongoose";
 
 
 export interface IProductionHouse extends Document {
+  name: string;
   avatar: string;
   banner?: Types.Array<string>;  
   createdAt: Date;
@@ -9,6 +10,12 @@ export interface IProductionHouse extends Document {
 };
 
 const ProductionHouse: Schema = new mongoose.Schema<IProductionHouse>({
+  name: {
+    type: String,
+    minlength: 3,
+    maxlength: 256,
+    required: true,
+  },
   avatar:{
     type: String,
     minlength: 16,
