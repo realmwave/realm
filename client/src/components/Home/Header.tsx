@@ -1,3 +1,5 @@
+import { signOut } from "firebase/auth";
+import auth from "../../firebase/firebase";
 import { AiOutlineMessage } from "react-icons/ai";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { BiSearch } from "react-icons/bi";
@@ -8,6 +10,15 @@ import "./styles.scss";
 
 
 export default function Header() {
+
+  async function logout() {
+    try {
+      await signOut(auth)
+    } catch (error:any) {
+      console.log("An error occured", error.code);
+    }
+  }
+
   return (
     <section className="w-full flex items-center justify-between" >
       <div className="flex items-center gap-3" >
@@ -27,7 +38,7 @@ export default function Header() {
           <div className="w-2 absolute right-0 aspect-square rounded-full bg-[var(--color-red)]" />
           <AiOutlineMessage size={22} className="text-[var(--color-lightGrey)]" />
         </div>
-        <div className="flex items-center" >
+        <button className="flex items-center" onClick={logout} >
           <div className="w-[40px] aspect-square rounded-full border-2 border-[var(--color-red)] p-[0.15rem] cursor-pointer" >
             <img src={personImg} alt="profile" className="w-full h-full rounded-full" />
           </div>
@@ -35,7 +46,7 @@ export default function Header() {
             <h3 className="app__text-tertiary text-[0.75rem]" >Ramona F.</h3>
             <h3 className="app__text-tertiary text-[0.65rem]" >@ramona</h3>
           </div>
-        </div>
+        </button>
       </div>
     </section>
   )

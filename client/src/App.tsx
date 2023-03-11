@@ -1,16 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter } from "react-router-dom";
+import { onAuthStateChanged } from 'firebase/auth';
 
-import Navigation from "./navigations/Navigation";
+import auth from "./firebase/firebase";
+//import {  }
+
+import AppNavigation from './navigations/AppNavigation';
+import AuthNavigation from './navigations/AuthNavigation';
 
 import './App.scss';
 
 
 function App() {
+  const [currentUser, setCurrentUser] = useState<null | object | undefined>(null)
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setCurrentUser(user)
+      } else {
+        setCurrentUser(undefined)
+      }
+    })
+
+    return () => {}
+  }, [])
+
   return (
     <BrowserRouter>
       <div className="App">
-        <Navigation />
+        {currentUser ? <AppNavigation /> : <AuthNavigation />}
       </div>
     </BrowserRouter>
   )

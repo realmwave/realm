@@ -61,13 +61,6 @@ const Menu = [
     route: "/settings",
     Icon: (className: string, size: number) => <RxGear size={size} className={className} />,
   },
-  {
-    id: 8,
-    text: "Logout",
-    category: "General",
-    route: "/logout",
-    Icon: (className: string, size: number) => <BiLogOut size={size} className={className} />,
-  },
 ]
 
 export default function Sidebar() {

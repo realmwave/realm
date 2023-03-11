@@ -1,28 +1,12 @@
-import { Routes, Route } from "react-router-dom";
-
-import { Sidebar } from "../containers";
-import { Home, Browse, ComingSoon, ErrorPage } from "../pages";
-
+import { Routes, Route } from "react-router-dom"
+import AppNavigation from "./AppNavigation"
 
 export default function Navigation() {
   return (
-    <div className="w-full h-screen" >
-      <Sidebar />
-      <div className="w-full h-full pt-8 pl-[15%]" >
-        <div className="w-full h-full px-20" >
-          <Routes >
-            <Route path="/" element={<Home />} />
-            <Route path="/browse" element={<Browse />} />
-            <Route path="/watchlist" element={<Browse />} />
-            <Route path="/comingsoon" element={<Browse />} />
-            <Route path="/friends" element={<Browse />} />
-            <Route path="/parties" element={<Browse />} />
-            <Route path="/settings" element={<Browse />} />
-            <Route path="/logout" element={<Browse />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-        </div>
-      </div>
+    <div className="w-full h-full" >
+      <Routes>
+        <Route path="/" element={<AppNavigation />} />
+      </Routes>
     </div>
   )
 };
