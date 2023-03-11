@@ -1,14 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
+console.log(import.meta.env.FIREBASE_APIKEY);
+
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDtvBuNVNIew0L42D0NGkoNSNDpzwevoqg",
-  authDomain: "realm777.firebaseapp.com",
-  projectId: "realm777",
-  storageBucket: "realm777.appspot.com",
-  messagingSenderId: "696103199296",
-  appId: "1:696103199296:web:5157a3c63eb966c94bf5a5",
-  measurementId: "G-P9EV87ZTL7"
+  apiKey: import.meta.env.VITE_FIREBASE_APIKEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_FIRABSE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_FIREABSE_APPID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENTID
 };
 
 // Initialize Firebase

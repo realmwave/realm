@@ -18,8 +18,6 @@ export default function AppNavigation() {
             <Route path="/friends" element={<Browse />} />
             <Route path="/parties" element={<Browse />} />
             <Route path="/settings" element={<Browse />} />
-            <Route path="/logout" element={<Browse />} />
-            {/*<Route path="*" element={<ErrorPage />} />*/}
           </Routes>
         </div>
       </div>

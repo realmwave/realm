@@ -13,13 +13,14 @@ export default function Auth() {
   const [authState, setAuthState] = useState<"login" | "register">("login")
   const [email, setEmail] = useState<string>("")
   const [password, setPassword] = useState<string>("")
-  
+
   function toggleAuthState() {
     setAuthState(prevState => {
       if (prevState === "login") return "register"
       else return "login"
     })
   }
+
   
   async function onSignInWithGoogle() {
     const provider = new GoogleAuthProvider();
@@ -46,7 +47,6 @@ export default function Auth() {
       //console.log(error.message);
     }
   }
-
   async function onSubmit(e: any) {
     setLoading(true)
     e.preventDefault()
