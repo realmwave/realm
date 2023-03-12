@@ -39,6 +39,7 @@ export interface IMedia extends Document {
   mediaUrl?: string;
   seasons?: string;
   duration?: string;
+  score: Types.Decimal128;
   createdAt: Date;
   updatedAt: Date;
 };
@@ -180,6 +181,11 @@ const MediaSchema: Schema = new mongoose.Schema<IMedia>({
     type: String,
     minlength: 3,
     maxlength: 128,
+  },
+  score: {
+    type: mongoose.Types.Decimal128,
+    min: 0,
+    max: 100,
   },
   createdAt: {
     type: Date,
