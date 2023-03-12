@@ -3,6 +3,7 @@ import Browse from "./Browse";
 import ComingSoon from "./ComingSoon";
 import ErrorPage from "./404";
 import Auth from "./Auth";
+import Video from "./Video";
 
 export {
   // Auth
@@ -13,5 +14,6 @@ export {
   Browse,
   ComingSoon,
   ErrorPage,
+  Video,
 };
 

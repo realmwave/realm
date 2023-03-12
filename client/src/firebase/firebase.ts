@@ -3,9 +3,6 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 
-console.log(import.meta.env.FIREBASE_APIKEY);
-
-
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_APIKEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTHDOMAIN,

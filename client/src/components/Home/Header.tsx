@@ -29,7 +29,6 @@ export default function Header() {
   
 
   async function logout() {
-    console.log("clicked")
     try {
       await signOut(auth)
     } catch (error:any) {

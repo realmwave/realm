@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import AppNavigation from "./AppNavigation";
 import AuthNavigation from "./AuthNavigation";
 
-import { Browse, ErrorPage, Home } from "../pages";
+import { Browse, ErrorPage, Home, Video } from "../pages";
 import { Sidebar } from "../containers";
 
 
@@ -22,7 +22,9 @@ export default function Navigation() {
         </Route>
         <Route path="/notification" element={<Browse />} />
         <Route path="/chat" element={<Browse />} />
+        <Route path="/watch/:id" element={<Video />} />
         <Route path="/profile" element={<Browse />} />
+        <Route path="/createparty" element={<Browse />} />
         <Route path="/auth" element={<AuthNavigation />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
